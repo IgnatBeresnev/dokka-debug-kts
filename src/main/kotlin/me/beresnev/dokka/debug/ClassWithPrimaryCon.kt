@@ -9,3 +9,7 @@ class ClassWithPrimaryCon constructor(val xd: Int) {
         print(xd)
     }
 }
+
+fun JavaClassWithCons.extensionMethod(overloaded: Boolean) {
+
+}

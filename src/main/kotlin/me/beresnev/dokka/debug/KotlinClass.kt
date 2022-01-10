@@ -20,6 +20,17 @@ class KotlinClass {
     }
 
     /**
+     * Overloaded
+     */
+    fun publicMethod(overloaded: Boolean) {
+
+    }
+
+    fun <T> List<T>.listExtension() {
+
+    }
+
+    /**
      * internal
      */
     internal fun inter() {
@@ -32,4 +43,8 @@ class KotlinClass {
     protected fun prot() {
 
     }
+}
+
+fun JavaClassWithCons.extensionMethod() {
+
 }
