@@ -3,7 +3,7 @@ import java.net.URL
 
 plugins {
     kotlin("jvm") version "1.6.10"
-    id("org.jetbrains.dokka") version "1.6.10"
+    id("org.jetbrains.dokka") version "1.6.20.5-SNAPSHOT" // branch with br in signatures + val/var
 }
 
 repositories {
@@ -18,7 +18,7 @@ dependencies {
     testImplementation(kotlin("test-junit"))
 
     // Will apply the plugin to all dokka tasks
-    dokkaPlugin("org.jetbrains.dokka:mathjax-plugin:1.6.0")
+    dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.6.20.5-SNAPSHOT")
 }
 
 tasks.withType<DokkaTask>().configureEach {
