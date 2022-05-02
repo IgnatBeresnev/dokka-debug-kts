@@ -1,50 +1,15 @@
 package me.beresnev.dokka.debug
 
-/**
- * constructor
- */
-class KotlinClass {
+class KotlinClass(val s: String) {
 
-    /**
-     * private
-     */
-    private fun priv() {
+
+    @Deprecated("Should be visible")
+    fun deprecatedUsual() {
 
     }
 
-    /**
-     * An example method.
-     */
-    fun publicMethod() {
+    @Deprecated("Should not be visible", level = DeprecationLevel.HIDDEN)
+    fun deprecatedHidden() {
 
     }
-
-    /**
-     * Overloaded
-     */
-    fun publicMethod(overloaded: Boolean) {
-
-    }
-
-    fun <T> List<T>.listExtension() {
-
-    }
-
-    /**
-     * internal
-     */
-    internal fun inter() {
-
-    }
-
-    /**
-     * prot
-     */
-    protected fun prot() {
-
-    }
-}
-
-fun JavaClassWithCons.extensionMethod() {
-
 }
