@@ -1,15 +1,13 @@
 package me.beresnev.dokka.debug
 
-class KotlinClass(val s: String) {
+class KotlinLibrary {
 
-
-    @Deprecated("Should be visible")
-    fun deprecatedUsual() {
-
+    @SimpleAnnotation(clazz = Array<String>::class)
+    fun simpleAnnotation(): Boolean {
+        return false
     }
 
-    @Deprecated("Should not be visible", level = DeprecationLevel.HIDDEN)
-    fun deprecatedHidden() {
-
+    fun foo(): Array<String>? {
+        return null
     }
 }

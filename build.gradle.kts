@@ -1,5 +1,5 @@
-import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.dokka.DokkaConfiguration.Visibility
+import org.jetbrains.dokka.gradle.DokkaTask
 import java.net.URL
 
 plugins {
@@ -21,28 +21,28 @@ dependencies {
     implementation(kotlin("stdlib"))
     testImplementation(kotlin("test-junit"))
 
-    dokkaPlugin("org.jetbrains.dokka:versioning-plugin:$dokkaVersion")
+//    dokkaPlugin("org.jetbrains.dokka:versioning-plugin:$dokkaVersion")
+//    dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:$dokkaVersion")
+//    dokkaPlugin("org.jetbrains.dokka:mathjax-plugin:$dokkaVersion")
 }
 
 tasks.withType<DokkaTask>().configureEach {
-    dokkaSourceSets {
-        named("main") {
-            moduleName.set("Dokka Debug KTS")
-            sourceLink {
-                documentedVisibilities.set(
-                    listOf(
-                        Visibility.PUBLIC,
-                        Visibility.PROTECTED
-                    )
+    dokkaSourceSets.configureEach {
+        documentedVisibilities.set(
+            setOf(
+                Visibility.PUBLIC,
+                Visibility.PROTECTED,
+            )
+        )
+
+        sourceLink {
+            localDirectory.set(file("src/main/kotlin"))
+            remoteUrl.set(
+                URL(
+                    "https://github.com/IgnatBeresnev/dokka-debug-kts/tree/master/src/main/kotlin"
                 )
-                localDirectory.set(file("src/main/kotlin"))
-                remoteUrl.set(
-                    URL(
-                        "https://github.com/IgnatBeresnev/dokka-debug-kts/tree/master/src/main/kotlin"
-                    )
-                )
-                remoteLineSuffix.set("#L")
-            }
+            )
+            remoteLineSuffix.set("#L")
         }
     }
 }
