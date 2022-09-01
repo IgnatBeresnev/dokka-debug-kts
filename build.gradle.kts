@@ -1,5 +1,7 @@
+import org.jetbrains.dokka.DokkaConfiguration
 import org.jetbrains.dokka.DokkaConfiguration.Visibility
 import org.jetbrains.dokka.gradle.DokkaTask
+import org.jetbrains.dokka.toJsonString
 import java.net.URL
 
 plugins {
@@ -26,12 +28,18 @@ dependencies {
 //    dokkaPlugin("org.jetbrains.dokka:mathjax-plugin:$dokkaVersion")
 }
 
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
 tasks.withType<DokkaTask>().configureEach {
     dokkaSourceSets.configureEach {
         documentedVisibilities.set(
             setOf(
                 Visibility.PUBLIC,
-                Visibility.PROTECTED,
+                Visibility.INTERNAL,
             )
         )
 
