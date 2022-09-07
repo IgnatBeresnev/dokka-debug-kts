@@ -5,11 +5,7 @@ package me.beresnev.dokka.debug;
  *
  * asjdhajshdk asdkasdaskjd aksdj askljdk
  * asdkajsld kjaskld jaskldj
- * asd kajsld kjaksld jsad lj
- * asd kasjd lksajd
- * ads kdjlaskj dkasljdlaks jd
- *
- * @return asdasd
+ * asd kajsld kjaksld jsad ljasdasd
  *
  * asdkjasldjaskldjsad
  */
