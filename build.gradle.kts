@@ -5,7 +5,7 @@ import org.jetbrains.dokka.toJsonString
 import java.net.URL
 
 plugins {
-    kotlin("jvm") version "1.6.21"
+    kotlin("jvm") version "1.7.20"
     id("org.jetbrains.dokka")
 }
 

@@ -1,19 +1,22 @@
 package me.beresnev.dokka.debug
 
-enum class KotlinEnum {
-    FOO, BAR;
+class Clazz {
+
 }
 
-fun foo() {
-    MyInterface.create()
+/**
+ * @throws IllegalStateException exception
+ * @param bar bar
+ * @param baz baz
+ * @return quix
+ * @see String for description of String
+ * @since 1.5
+ * @author Elon Musk
+ */
+fun foo(bar: String, baz: String): String {
+    return "foo"
 }
 
-interface MyInterface {
-
-    companion object {
-        @JvmStatic
-        fun create(): MyInterface = MyInterfaceImpl()
-    }
+fun sample() {
+    println("Hello, world")
 }
-
-class MyInterfaceImpl() : MyInterface
