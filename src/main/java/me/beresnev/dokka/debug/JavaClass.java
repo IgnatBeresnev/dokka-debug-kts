@@ -1,7 +1,7 @@
-package me.beresnev.dokka.debug;
+package me.beresnev.dokka.debug.blabla;
 
 /**
- * Java documentation
- */
+ * +:result/**
+ **/
 public class JavaClass {
 }

@@ -5,18 +5,21 @@ class Clazz {
 }
 
 /**
- * @throws IllegalStateException exception
- * @param bar bar
- * @param baz baz
- * @return quix
- * @see String for description of String
- * @since 1.5
- * @author Elon Musk
- */
-fun foo(bar: String, baz: String): String {
+ * hello
+ * <pre class=" language-kotlin"><code class=" language-kotlin">
+ * artifactRules = "+:result&#47;** => result.zip"
+ * </code></pre>
+ * after
+ **/
+fun foo(): String {
     return "foo"
 }
 
-fun sample() {
-    println("Hello, world")
+fun main() {
+    println(
+        """{ 
+            "footerMessage": "(c) 2022 MyOrg" 
+        }
+        """.trimMargin()
+    )
 }
