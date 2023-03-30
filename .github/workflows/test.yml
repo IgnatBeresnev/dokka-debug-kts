@@ -8,7 +8,7 @@ env:
 jobs:
   display-variables:
     steps:
-      - run:
-          echo "Variable for event name: ${{ github_event_name_var }}"
-      - run:
-          echo "Variable for actor name: ${{ github_actor_name_var }}"
+      - name: event name
+        run: echo "Variable for event name ${{ github_event_name_var }}"
+      - name: actor name
+        run: echo "Variable for actor name ${{ github_actor_name_var }}"
