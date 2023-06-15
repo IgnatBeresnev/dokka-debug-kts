@@ -1,17 +1,12 @@
 pluginManagement {
-    val dokkaVersion: String by settings
+    val kotlin_version: String by settings
+    val dokka_version: String by settings
 
     plugins {
-        id("org.jetbrains.dokka") version dokkaVersion
+        kotlin("jvm") version kotlin_version
+        id("org.jetbrains.dokka") version dokka_version
     }
 
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.namespace == "org.jetbrains.kotlin") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-        }
-    }
 
     repositories {
         mavenLocal()

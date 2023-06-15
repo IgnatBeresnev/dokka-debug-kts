@@ -1,11 +1,9 @@
-import org.jetbrains.dokka.DokkaConfiguration
 import org.jetbrains.dokka.DokkaConfiguration.Visibility
 import org.jetbrains.dokka.gradle.DokkaTask
-import org.jetbrains.dokka.toJsonString
 import java.net.URL
 
 plugins {
-    kotlin("jvm") version "1.7.20"
+    kotlin("jvm")
     id("org.jetbrains.dokka")
 }
 
