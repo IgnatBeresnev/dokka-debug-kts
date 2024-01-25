@@ -10,8 +10,10 @@ pluginManagement {
 
     repositories {
         mavenLocal()
-        mavenCentral()
-        maven("https://oss.sonatype.org/content/repositories/snapshots")
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/test")
         maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
+        maven("https://oss.sonatype.org/content/repositories/snapshots")
+        gradlePluginPortal()
+        mavenCentral()
     }
 }

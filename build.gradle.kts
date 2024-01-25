@@ -1,6 +1,4 @@
-import org.jetbrains.dokka.DokkaConfiguration.Visibility
 import org.jetbrains.dokka.gradle.DokkaTask
-import java.net.URL
 
 plugins {
     kotlin("jvm")
@@ -9,9 +7,9 @@ plugins {
 
 repositories {
     mavenLocal()
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/test")
     maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
     maven("https://oss.sonatype.org/content/repositories/snapshots")
-    maven("https://plugins.gradle.org/m2/")
     mavenCentral()
 }
 
@@ -21,34 +19,37 @@ dependencies {
     implementation(kotlin("stdlib"))
     testImplementation(kotlin("test-junit"))
 
-//    dokkaPlugin("org.jetbrains.dokka:versioning-plugin:$dokkaVersion")
-//    dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:$dokkaVersion")
-//    dokkaPlugin("org.jetbrains.dokka:mathjax-plugin:$dokkaVersion")
-}
-
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+    // Here's how you can apply Dokka plugins
+    // dokkaPlugin("org.jetbrains.dokka:versioning-plugin:$dokkaVersion")
+    // dokkaPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:$dokkaVersion")
+    // dokkaPlugin("org.jetbrains.dokka:mathjax-plugin:$dokkaVersion")
 }
 
 tasks.withType<DokkaTask>().configureEach {
     dokkaSourceSets.configureEach {
-        documentedVisibilities.set(
-            setOf(
-                Visibility.PUBLIC,
-                Visibility.INTERNAL,
-            )
-        )
 
-        sourceLink {
-            localDirectory.set(file("src/main/kotlin"))
-            remoteUrl.set(
-                URL(
-                    "https://github.com/IgnatBeresnev/dokka-debug-kts/tree/master/src/main/kotlin"
-                )
-            )
-            remoteLineSuffix.set("#L")
-        }
+//        moduleName.set("Debug project")
+
+//        documentedVisibilities.set(
+//            setOf(
+//                Visibility.PUBLIC,
+//                Visibility.PACKAGE,
+//            )
+//        )
+//
+//        perPackageOption {
+//            matchingRegex.set("com.example.*")
+//            suppress.set(true)
+//        }
+//
+//        sourceLink {
+//            localDirectory.set(file("src/main/kotlin"))
+//            remoteUrl.set(
+//                URL(
+//                    "https://github.com/IgnatBeresnev/dokka-debug-kts/tree/master/src/main/kotlin"
+//                )
+//            )
+//            remoteLineSuffix.set("#L")
+//        }
     }
 }
